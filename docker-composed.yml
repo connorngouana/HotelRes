@@ -1,0 +1,27 @@
+version: "3.8"
+
+services:
+  reservation-service:
+    image: hotelreservation:latest
+    ports:
+      - "8084:8084"
+    networks:
+      - my_network
+
+  room-service:
+    image: roomreservation:latest
+    ports:
+      - "8085:8085"
+    networks:
+      - my_network
+
+  payment-service:
+    image: paymentreservation:latest
+    ports:
+      - "8086:8086"
+    networks:
+      - my_network
+
+networks:
+  my_network:
+    driver: bridge

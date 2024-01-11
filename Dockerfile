@@ -4,6 +4,6 @@ WORKDIR /app
 
 COPY target/HotelReservation-0.0.1-SNAPSHOT.jar /app
 
-EXPOSE 8081
+EXPOSE 8084
 
-CMD ["java", "-jar" , "HotelReservation-0.0.1-SNAPSHOT.jar"]
+CMD ["java", "-jar" , "HotelReservation-0.0.1-SNAPSHOT.jar" , "--spring.profiles.active=docker"]

@@ -1,22 +1,19 @@
 package ie.atu.hotelreservation;
 
-import jakarta.persistence.*;
-import jakarta.validation.Valid;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Positive;
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Entity
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
-public class UserDetails
+public class User
 {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
@@ -38,24 +35,4 @@ public class UserDetails
 
     @NotBlank(message = "userId is required")
     private String userId;
-
-
-    @Data
-    @AllArgsConstructor
-    @NoArgsConstructor
-    public static class PaymentDetails
-    {
-
-        private double lengthOfStay;
-
-        private double roomRate;
-
-        private double taxRate;
-
-
-        private double total;
-    }
-
-
 }
-
